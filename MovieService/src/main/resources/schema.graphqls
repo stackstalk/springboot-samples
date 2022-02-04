@@ -1,0 +1,20 @@
+type Movie {
+   id: ID
+   name: String
+   director: String
+}
+
+input MovieInput {
+   id: ID!
+   name: String!
+   director: String!
+}
+
+type Query {
+   movies: [Movie]
+   movieById(id: ID): Movie
+}
+
+type Mutation {
+   addMovie(movieInput: MovieInput): Movie
+}
